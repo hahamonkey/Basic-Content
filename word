@@ -1,0 +1,21 @@
+anchor 锚 <a>
+
+colspan 跨列
+HTML    Hyper Text Markup Language 超文本标记语言
+href    Hypertext Reference(引用)
+
+
+initial-scale 初始缩放
+
+rowspan 跨行
+src  source
+
+maximum-scale 最大缩放
+minimum-scale 最小缩放
+
+utf-8   8-bit Unicode Transformation Format
+user-scalable 是否允许用户缩放
+
+viewport 可视化窗口
+
+

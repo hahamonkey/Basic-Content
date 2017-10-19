@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <form action="">
+        <p>
+            <label for="username">用户名：</label>
+            <!-- 当有这一行时此处点击文字可以选中输入框-->
+            <input type="text" id="username">
+        </p>
+        <p>
+            <label for="psword">密码：</label>
+            <input type="password" id="psword">
+            <!-- 相对于此，移动端输出密码时会出现小键盘去选择，这种方式以防黑客会监视密码输入，故而相对安全-->
+        </p>
+        <p>
+            性别：
+            <input type="radio" name="sex" value="man" checked >男
+            <input type="radio" name="sex" value="woman">女
+            <!-- 当单选按钮中的name属性为同一组时才可以在这一组中单选-->
+        </p>
+        <p>
+            爱好：
+            <input type="checkbox" value="singing" checked>唱歌
+            <input type="checkbox" value="dancing">跳舞
+            <!--此处 checked为默认选中 -->
+        </p>
+        <p>
+            省：
+            <select name="province" id="" multiple>
+                <option value="黑龙江">黑龙江</option>
+                <option value="吉林" selected>吉林</option>
+                <option value="辽宁">辽宁</option>
+            </select>
+            <!-- 此处 selected为默认选中 multiple为多选
+                不同浏览器中，下拉框样式不同，为解决此问题，会使用自定义样式
+            -->
+        </p>
+        <p>
+            自我介绍：<textarea name="" id=""></textarea>
+        </p>
+        <p>
+            <input type="email">
+        </p>
+        <p>
+            <input type="submit" value="确定">
+            <!-- 当提交以上单选、多选、复选等时，提交的是value中的值，而浏览器中所能看见的“男”、“唱歌”等
+                在select中，若忽略value的值时，默认提交的值为“黑龙江”、“吉林”等
+            -->
+        </p>
+
+    </form>
+</body>
+</html>

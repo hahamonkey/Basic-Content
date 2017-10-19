@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+            <!-- windows系统中忽略<meta charst="UTF-8"时，默认的的字符集设置为gbk。
+                 GB2312指国家标准2312号文件，规定简体中文字符集；
+                 GBK指简体中文字符集加上繁体中文字符集；
+
+                 而mac系统不支持gbk，打开会出现乱码的情况，故而使用统一字符集UTF-8（UTF-32）。
+                 utf-8有65536个字符,编号从0到65535（基本包含各主流国家的语言），前256个与ASCII码
+                一样，唯一区别就是ASCII码是单字节，这里是双字节；
+            -->
+         <title>hah</title>
+        <meta name="viewport" content="width=device-width" user-scalable=no
+            <!--若不写width=device-width,所有的移动端默认像素为980px(历史遗留产物) --00:57:57-->
+    </head>
+    <body>
+        <img src="img/1.jpg" alt="美女" title="大美女">
+            <!--例：
+                <img src="img/12.jpg" alt="美女">
+                当src不正确时，alt起到文字提示和占位作用
+
+                title起图片注释作用，当网络爬虫爬图片会同时缓存title到数据库，按照title的文字进行分门别类
+            -->
+    </body>
+</html>
