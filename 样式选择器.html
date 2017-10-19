@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>样式选择器</title>
+    <style>
+        h1{                                     /*标签选择器*/
+            color:green;
+        }
+        #aa{                                   /*id选择器，id的值是唯一的*/
+            color:red;
+        }
+        h1,p{                                   /*分组选择器*/
+            color:green;
+        }
+        #bb{
+            font-size:60px;
+        }
+        .cc{                                    /*多类选择器，可扩展性强*/
+            color:red;
+        }
+        .dd{
+            color:green;
+            font-size:50px;
+        }
+        #div1 h1{                               /*后代选择器，先找子元素，然后在确定父元素（即从右往左）*/
+            background:#ff0;
+        }
+        #div1 .ff{
+            background:#00f;                    /*此处可以直接写为 .ff{ background:#00f; }
+                                                  当出现多个ff多类选择器时，加上父元素可以缩小
+                                                  范围，这里由于 (id选择器权重值)+(多类选择器权重值）
+                                                  >(id选择器权重值)+（标签选择器权重值），“哞哞”
+                                                  为蓝色  */
+        }
+        h1.ff{                                  /*h1与.ff之间未加空格，表示h1标签内的多类选择器
+                                                  又因为权重值相对要低，这里不显示样式中的颜色*/
+            color:aqua;
+        }
+        div#div1{
+            color:#4f4e56;                       /*由于id选择器选中元素是唯一的，故而前面加上div是多余的
+                                                    且会降低浏览器效率，不要用错误的写法*/
+        }
+        #div1 > h1{                              /*子代选择器，有兼容性问题，不支持IE6*/
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="aa">哈哈</h1>
+    <p id="aa">hehe</p>
+    <!--浏览器不能很好的规定id选择器，“哈哈”、“hehe”均为红色，但语法错误，是不允许的 -->
+    <h1>哼哼</h1>
+    <h1 class="cc dd">hah</h1>
+    <!-- 当样式发生冲突时，与多类选择器的定义无关，与样式定义顺序有关，采用就近原则 -->
+    <p id="bb" class="cc">呵呵</p>
+    <div id="div1">
+        <h1 class="ff">哞哞</h1>
+        <div>
+            <h1>哞哞</h1>
+        </div>
+        <h1>哞哞</h1>
+    </div>
+    <!-- 为了不选中所有的h1标签，可以利用后代选择器，使用某个父元素下的h1标签 -->
+    <!-- 这里子代选择器会选中div1下的第一级h1,不选中div1下的div里的h1-->
+</body>
+</html>
