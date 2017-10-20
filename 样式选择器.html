@@ -39,11 +39,69 @@
         }
         div#div1{
             color:#4f4e56;                       /*由于id选择器选中元素是唯一的，故而前面加上div是多余的
-                                                    且会降低浏览器效率，不要用错误的写法*/
+                                                    且会降低浏览器效率，这样的写法是错误的*/
         }
         #div1 > h1{                              /*子代选择器，有兼容性问题，不支持IE6*/
             color:red;
+            background:#0f0;
         }
+        #div1 + p{                               /*兄弟选择器，选中div1后面最近的p */
+            color:green;
+        }
+        #div1 ~ p{                               /*兄弟选择器，选中div1后面所有的p */
+            color:#ff6700;
+        }
+        [id]{                                    /*选中所有含有id的元素*/
+            background:#cccccc;
+        }
+        [id*=bb]{                                /*选中所有含有id值有bb的元素 */
+            background:#cc00cc;
+        }
+        [id^=bb]{                                /*选中所有含有id值中有bb且以bb开头的元素 */
+            background:#cc00cc;
+        }
+        [id$=bb]{                                /*选中所有含有id值中有bb且以bb结尾的元素 */
+            background:#cc00cc;
+        }
+        #div2:hover{                             /* 滑过 更改样式，不过存在兼容性问题，IE6只支持给a标签添加hover
+                                                    ，且是唯一一个带交互效果的选择器*/
+            background:#ff0000;
+        }
+        #ul1 li:first-child{                     /*只选中ul1下的第一个li */
+            background:#ff0000;
+        }
+        #ul1 li:last-child{                      /*只选中ul1下的最后一个li */
+            background:#ff0000;
+        }
+        #ul1 li:nth-child(2n){                   /*只选中ul1下的第偶数个li，括号内可以自定义公式，如2n+1(奇数)，
+                                                   也可以使用合理的数字，这里，可以使用1、2、3、4 ,又兼容性问题，
+                                                   IE6、IE7、IE8不支持*/
+            background:#ff0000;
+        }
+        #div3 p:nth-child(1){                    /* nth-child与类型无关，只选中对应类型的第一个孩子，故而这里的
+                                                    选择器无作用，为了解决此问题，对照下一个选择器的用法*/
+            color:red;
+        }
+        #div3 p:nth-of-type(1){                  /*指选中p类型的第一个元素*/
+            color:red;
+        }
+        #p1{
+            width:200px;
+            height:100px;
+            background:#cccccc;
+        }
+        #p1:first-line{                          /*伪对象选择器，选择浏览器中显示p1的第一行*/
+            color:red;
+        }
+        /*CSS伪类与CSS伪对象的区别
+
+          CSS 引入伪类和伪元素的概念是为了描述一些现有CSS无法描述的东西
+
+          根本区别在于：它们是否创造了新的元素（抽象）
+
+          伪类：一开始用来表示一些元素的动态状态，随后CSS2标准扩展了其概念范围，使其成为了所有逻辑上存在但在文档树中却无须标识的“幽灵”分类
+
+          伪对象：代表了某个元素的子元素，这个子元素虽然在逻辑上存在，但却并不实际存在于文档树中 */
     </style>
 </head>
 <body>
@@ -63,5 +121,26 @@
     </div>
     <!-- 为了不选中所有的h1标签，可以利用后代选择器，使用某个父元素下的h1标签 -->
     <!-- 这里子代选择器会选中div1下的第一级h1,不选中div1下的div里的h1-->
+    <p>嘻嘻</p>
+    <p id="bbaa">吼吼</p>
+    <div id="div2">
+        哒哒哒
+    </div>
+    <ul id="ul1">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+    </ul>
+    <div id="div3">
+        <h1>H1H1H1</h1>
+        <p>pppp</p>
+        <h1>h1h1h1h1</h1>
+    </div>
+    <p id="p1">
+        hahahahhahahahhahahhahahahhahhahahahahhahahhaha
+        ahahhahahhahahahhahahahahhahahahhahahahahhahhah
+        hahahahhahahahhahahahahhahahahahahahahahahahhaah
+    </p>
 </body>
 </html>

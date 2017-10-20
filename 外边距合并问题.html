@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #a, #b{
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+        }
+        #a{
+            margin-bottom:80px;
+        }
+        #b{
+            margin-top:30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="a">
+        a
+    </div>
+    <div id="b">
+        b
+    </div>
+
+</body>
+这里，由于a外边距80px,外边距30px,会合并，最后空间为大的一方80px;
+-->
+<meta charset="UTF-8">
+<title>子元素上外边距与父元素合并问题</title>
+<style>
+    #a, #b{
+        width: 100px;
+        height: 100px;
+        background: #ff0000;
+    }
+    #a{
+        width:200px;
+        height:200px;
+        /*padding-top:30px;  可以解决合并问题，但a元素加了内边距，整体框架变大，此法亦不行*/
+        /*border:1px solid #fff; 给父元素加边框也可解决合并问题，但会占像素，此方法不推荐 */
+        overflow:hidden;/* 本意值解决溢出隐藏，这里可以用来解决外边距合并的问题*/
+    }
+    #b{
+        margin-top:30px;
+        background:#00ff00;
+        /*position:absolute; 定位可以解决合并的问题*/
+    }
+</style>
+</head>
+<body>
+<div id="a">
+    <!--a 若此处有作为文本的a，则看不到合并现象-->
+    <div id="b">
+        b
+    </div>
+</div>
+</body>
+</html>

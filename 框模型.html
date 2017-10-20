@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>框</title>
+    <style>
+        h1,p,div{
+            background: red;
+            display:inline-block;/*使块级元素仍有块级元素宽高的特点，又能让其水平排列，但IE6不支持*/
+            /*display:none;  隐藏，且释放空间 */
+            /*display:inline;块级元素设为行级元素*/
+        }
+        a,span{
+            background:red;
+            width:200px;
+            height:100px;
+            display:block;
+        }
+    </style>
+</head>
+<body>
+<h1>h1</h1>
+<p>p</p>
+<div>div</div>
+<a href="#">a</a>
+<span>span</span>
+</body>
+</html>
+
+<!--
+   1.所有的元素都是框；
+   2.a,span为行级元素，不能设置宽和高，所以可以将样式设为 display:clock;div,p,h1等为块级元素
+   3.行级元素水平排列，块级元素竖直排列；
+-->
+<!--注意留心各种标签元素作为块级元素和行级元素，其框的边距距离-->

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>透明度继承问题</title>
+    <style>
+        #div1{
+            width:200px;
+            height:200px;
+            background:rgba(80,80,80,0.5);
+             /* background:#ccc;
+                opacity: 0.5;
+                这样写，子元素会继承父元素透明度。
+                解决方案：
+                1.div1与div2处于并列关系；
+                2.使用rgba()[有兼容性问题，IE6-8不支持]
+             */
+        }
+        #div2{
+            width:100px;
+            height:100px;
+            background:#f00;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <div id="div2">
+        hah
+    </div>
+</div>
+</body>
+</html>
