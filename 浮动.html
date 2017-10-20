@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #a,#b,#c{
+            width:100px;
+            height:100px;
+            float:left;/*左浮释放空间，d上移一部分被a、b、c覆盖，看不见，但是文本部分会被挤下来
+                        为解决问题，使用clear*/
+        }
+        #a{
+            background:#f00;
+        }
+        #b{
+            background:#0f0;
+
+        }
+        #c{
+            background: #00f;
+        }
+        #d{
+            background:#4f4e56;
+            width:800px;
+            height:500px;
+            clear:left; /*clear指清除浮动，属性值有left,right,both，因此也得以保留了浮动释放的空间的高度*/
+        }
+    </style>
+
+</head>
+<body>
+    <div id="a">a</div>
+    <div id="b">b</div>
+    <div id="c">c</div>
+    <div id="d">d</div>
+</body>
+</html>
+
+
+<!--注意float与inline-block的区别：
+float 释放空间，inline-block不释放空间；
+float各元素间无间隙，inline-block 间有间隙，不过可以删除标签间空格解决 2:22:03
+-->

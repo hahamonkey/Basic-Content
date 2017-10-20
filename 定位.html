@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>定位</title>
+    <style>
+        body{                 /*这里给body加上宽度会使浏览器出现滚动条*/
+            height:2000px;
+        }
+        #div1{
+            width:100%;/*若此处不写，则原本div1默认宽度为占据父元素剩下所有空间，自适应，但是由于
+                        后面的固定定位使元素的宽度只有字体撑起来的一部分，这里作用自定义宽度，变为
+                        原始宽度 */
+            height:50px;
+            background:#ff0000;
+            position:fixed;  /*定位相对于浏览器，而非body，也非html，浏览器概念与html不同，IE6不支持此用法*/
+        }
+        #a,#b,#c{
+            width:100px;
+            height:100px;
+            display:inline-block;/*使块级元素横向*/
+        }
+        #a{
+            background:#f00;
+        }
+        #b{
+            background:#0f0;
+            /*position:absolute;  绝对定位的元素的位置相对于最近的已定位祖先元素，如果没哟已定位的祖先元素，那么他的位置相对于最初的包含块（可以说body,标准化说html）
+            /*position:relative;  相对定位相对于该元素自己的初始位置，且不释放空间
+            left:50px;
+            top:50px;
+            */
+        }
+         #c{
+            background:#00f;
+        }
+        #main{
+            width:800px;
+            height:400px;
+            background:#e0e0e0;
+           /* margin-top:50px;
+            margin-left:50px;
+            这里使main相对于body向左、向下蹿50px
+            */
+            position: relative; /*作用同外边距调整main的位置*/
+            left:50px;
+            top:50px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">hahah</div>
+<div id="main">
+    <div id="a">a</div>
+    <div id="b">b</div>
+    <div id="c">c</div>
+</div>
+</body>
+</html>

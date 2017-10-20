@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #ul1{
+            background: #cccccc;
+            list-style: none;/*列表样式，属性值主要有disk,circle,square,lower-roman(罗马数字)，decimal(数字)，none*/
+            overflow: hidden;/*给父元素加这句话可以解决元素塌陷问题*/
+        }
+        #ul1 li{
+            background: #ff0000;
+            float: left; /*子元素浮动释放空间，父元素就变得没有高，解决方案：
+                            1.若确定父元素ul的高度，直接给父元素加上固定高度;
+                            2.见第四个li写法;
+                         */
+        }
+    </style>
+</head>
+<body>
+<ul id="ul1">
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+    <li style="float:none; clear:both;"></li>  <!--对比  浮动.html 中的clear用法，加深印象-->
+</ul>
+</body>
+</html>
