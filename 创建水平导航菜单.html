@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>水平导航菜单</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        #menu a{                         /*注意书写方式，加了父元素，其实可以不加，这样写标准化*/
+            width:100%;
+            height:100%;
+            display:block;               /*a标签为行级元素，该语法使a变为块级元素*/
+            text-decoration: none;
+            background:purple;
+            color:#eeeeee;
+            text-indent:20px;            /*缩进作用*/
+        }
+        #menu li{                        /*注意书写方式，加了父元素，其实可以不加，这样写标准化*/
+            width:120px;
+            height:30px;
+            float:left;
+            margin-right: 1px;
+            line-height: 30px;
+
+        }
+        #menu a:hover{                   /*注意这里不能给li 加hover，li被a覆盖，加了不能选中li，不起作用*/
+            background:orange;
+        }
+    </style>
+</head>
+<body>
+<ul id="menu">
+    <li><a href="#">Link 1</a></li>         <!--这个li与ul 必须相邻，中间不能插入任何东西-->
+    <li><a href="#">Link 2</a></li>
+    <li><a href="#">Link 3</a></li>
+    <li><a href="#">Link 4</a></li>
+</ul>
+</body>
+</html>
