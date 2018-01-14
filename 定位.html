@@ -13,7 +13,8 @@
                         原始宽度 */
             height:50px;
             background:#ff0000;
-            position:fixed;  /*定位相对于浏览器，而非body，也非html，浏览器概念与html不同，IE6不支持此用法*/
+            position:fixed;  /*定位相对于浏览器,即以窗口为参考，而非body，也非html，浏览器概念与html不同，IE6不支持此用法*/
+
         }
         #a,#b,#c{
             width:100px;
@@ -25,7 +26,9 @@
         }
         #b{
             background:#0f0;
-            /*position:absolute;  绝对定位的元素的位置相对于最近的已定位祖先元素，如果没哟已定位的祖先元素，那么他的位置相对于最初的包含块（可以说body,标准化说html）
+            /*position:absolute;  绝对定位的元素的位置相对于最近的已定位祖先元素，如果没哟已定位的祖先元素，那么他的位置相对于最初的包含块（可以说body,标准化说html)。
+            当使用绝对定位相对于有滚动条的body时，是相对于可视窗口body的定位.例如：left:50px;bottom:20px;body的高度为2000px时，并非在页面左下，而是在可视窗口左下*/
+
             /*position:relative;  相对定位相对于该元素自己的初始位置，且不释放空间
             left:50px;
             top:50px;
@@ -40,7 +43,7 @@
             background:#e0e0e0;
            /* margin-top:50px;
             margin-left:50px;
-            这里使main相对于body向左、向下蹿50px
+            这里使main相对于body向右、向下蹿50px
             */
             position: relative; /*作用同外边距调整main的位置*/
             left:50px;
