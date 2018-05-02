@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h3>background属性</h3>
+<p>
+    background简写属性在一个声明中可设置所有的背景属性。
+</p>
+<p>可设置属性如下：</p>
+<ul>
+    <li>background-image：设置背景图像，可以是真实的图片路径，也可以是创建的渐变背景</li>
+    <li>background-position：设置背景图像的位置</li>
+    <li>background-size:设置背景图像的大小</li>
+    <li>background-repeat:指定背景图片的铺排方式</li>
+    <li>background-attachment:指定背景图像是滚动还是固定</li>
+    <li>background-origin：设置背景图像显示的原点【background-position相对定位的原点】</li>
+    <li>background-clip：设置背景图像外剪裁的区域</li>
+    <li>background-color:指定背景颜色</li>
+</ul>
+<p>简写顺序如下</p>
+<p>bg-color||bg-image||bg-position[/bg-size]?||bg-repeat||bg-attachment||bg-origin||bg-clip</p>
+<p>顺序并非固定，但是要注意：</p>
+<ol>
+    <li><p>
+        background-position 和 background-size 属性, 之间需使用/分隔, 且position值在前, size值在后。
+    </p></li>
+    <li><p>
+        如果同时使用 background-origin 和 background-clip 属性, origin属性值需在clip属性值之前, 如果origin与clip属性值相同, 则可只设置一个值。
+    </p></li>
+</ol>
+<br/>
+<p>
+    background是一个复合属性, 可设置多组属性, 每组属性间使用逗号分隔, 其中背景颜色不能设置多个且只能放在最后一组。
+</p>
+<p>如设置的多组属性背景图像之间存在重叠, 则前面的背景图像会覆盖在后面的背景图像上。</p>
+</body>
+</html>
